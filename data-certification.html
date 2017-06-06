@@ -1,0 +1,790 @@
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <title>Kaizen - Data Certification</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!--Import materialize.css-->
+    <link href="css/materialize.css" rel="stylesheet" />
+
+    <!-- scrollbar -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css" />
+    
+    
+    
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+
+    <!--[if lt IE 9]>
+        <script src="js/html5shiv.js"></script>
+        <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <script src="js/modernizr.custom.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-fixed-top custNavbar mainNavTopBar">
+    
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                
+                <a class="logoImg" href="#."><img src="images/logo-kaizen.png" /></a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse mainMenu" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav pull-right pos-Abs">
+                
+                    <li><a href="#.">Dashboard</a></li>
+                    <li><a href="#.">Production View</a></li>
+                    <li><a href="#.">Set Priority</a></li>
+                    <li><a href="#.">Reports</a></li>
+                    <li><a href="#.">Loan Import</a></li>
+                    <li><a href="#.">Admin</a></li>
+                    <li><a href="#.">Reverification</a></li>
+                    <li class="dropdown noEffect">
+                        <a href="#." class="menuSearch dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-search zmdi-hc-fw"></i></a>
+                        <div class="dropdown-menu arrowBefore menuSearchBox">
+                            <form class="form-elmnts customForm">
+                                <div class="form-group">
+                                    <div class="input-field">
+                                        <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12 noPadLeft">
+                                            <input type="radio" name="searchBy" id="radLoanNo">
+                                            <label for="radLoanNo" class="radio-inline">Search by Loan No</label>
+                                        </div>
+
+                                        <div class="col-lg-7 col-md-6 col-sm-6 col-xs-12 noPadLeft">    
+                                            <input type="radio" name="searchBy" id="radBorrowerNm"> 
+                                            <label for="radBorrowerNm" class="radio-inline">Search by Borrower Name</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-field">
+                                        <input type="text" placeholder="Please search here...">
+                                    </div>
+                                </div>
+                                <div class="btn-wrap">
+                                    <button type="submit" name="" id="" class="btn btnRedFilled">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </li>
+                    <li class="last dropdown noEffect">
+                        <a href="#." class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="userProfilePic">
+                                <img src="images/user.png" class="user-photo img-responsive" />                            
+                            </span>
+                            <span class="welcomeTxt">
+                                <span class="welcomeTxtSmall">Welcome,</span> S. Wilson 
+                            </span>
+                            <span class="caret"><i class="zmdi zmdi-chevron-down zmdi-hc-fw"></i></span>
+                        </a>
+                        <ul class="dropdown-menu arrowBefore">
+                            <li><a href="#."><i class="zmdi zmdi-account-o zmdi-hc-fw"></i>Profile</a></li>
+                            <li><a href="#."><i class="zmdi zmdi-settings zmdi-hc-fw"></i>Setting</a></li>
+                            <li><a href="#."><i class="zmdi zmdi-power zmdi-hc-fw"></i>Logout</a></li>                                                       
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="container-fluid mainContainerFluid">
+        <div class="row">
+            
+            <div id="wrap">
+
+                <!-- heading 1 starts -->
+                <div class="row pageBigHeaderRow">
+                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                        <div class="pageBigHeaderHeading headingInline">
+                            <h2 class="pageBigHeading">Data Certification</span></h2>
+                        </div>                                                                       
+                    </div>
+
+                    <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">                        
+
+                        <div class="workFlowHeading">
+                            <div class="workflowText"><span class="txtRed"><i class="zmdi zmdi-swap-alt zmdi-hc-fw workflowIcon"></i> Current Workflow:</span>  LE &amp; CD Comparison Review</div>
+                            <div class="workflowSelect">
+                                <div class="input-field">
+                                    <select class="select">
+                                        <option value="Switch Workflow" selected="selected">Switch Workflow</option>
+                                        <option value="Workflow 1">Workflow 1</option>
+                                        <option value="Workflow 2">Workflow 2</option>
+                                        <option value="Workflow 3">Workflow 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>                        
+
+                    </div>
+                </div>
+                <!-- heading 1 ends -->
+                    
+                <div class="clearfix"></div>
+
+                <div class="row">                      
+                    <div id="boxMainLeft" class="dcBoxMainLeft">
+                        <div class="comnBoxNew comnBoxDC">
+                            
+                            <div class="otherTableWrapper">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12">
+                                        <h6 class="pageBigHeading">Data Certification</h6>
+                                    </div>
+
+                                    <div class="col-lg-12 col-md-12 dataCertIconsRow">
+                                        <div class="dcMenuIcon">
+                                            <a href="javascript:void(0);" class="dcIcon iconMn dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="zmdi zmdi-menu zmdi-hc-fw"></i></a>
+                                            <ul class="dropdown-menu arrowBefore">
+                                                <li><a href="#.">Automated Underwriting Findings</a></li>
+                                                <li><a href="#.">1008-Transmittal Summary</a></li>
+                                                <li><a href="#.">Closing Disclosure</a></li> 
+                                                <li><a href="#.">Note</a></li> 
+                                                <li><a href="#.">Form 1003</a></li> 
+                                                <li><a href="#.">Loan Estimate</a></li>                                                       
+                                            </ul>
+                                        </div>
+                                        <div class="dcIconOthers">
+                                            <a href="data-certification-new-window.html" target="_blank" class="dcIcon iconNewWin"><i class="zmdi zmdi-open-in-new zmdi-hc-fw"></i></a>
+                                            <a href="#" class="dcIcon iconNglDblL"><i class="fa fa-angle-double-left"></i></a>
+                                            <a href="#" class="dcIcon iconNglL"><i class="fa fa-angle-left"></i></a>
+
+                                            <span class="dcIconInput">
+                                                <input type="text" name="" value="" />
+                                                <span class="slash">/</span>
+                                                <span>4</span>
+                                            </span>
+
+                                            <a href="#" class="dcIcon iconNglR"><i class="fa fa-angle-right"></i></a>
+                                            <a href="#" class="dcIcon iconNglDblR"><i class="fa fa-angle-double-right"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="clear"></div>
+                                    <div class="col-lg-12 col-md-12">
+                                        <div class="dataCertImgRow mcustomScroll">
+                                            <img src="images/refDocBig.png" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div id="boxMainRight" class="dcBoxMainRight">
+                        
+                        <div class="comnBoxNew comnBoxDC">
+                                <!-- table starts -->
+                                <div class="otherTableWrapper">
+                                    <div class="tableHeadingRow tbl-grid-control tbl-grid-control-header">
+                                        <div class="row">
+                                        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 tableHeading">
+                                            <h6 class="pageBigHeading">Data Certification</h6>
+                                        </div>
+                                        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12 noPadLeft btnOutlineWrapper">
+                                            
+                                            <div class="tableButtonsRow tableShowRecord">
+                                                <div class="btn-group">
+                                                    <button type="submit" class="btn btnOutlineRed">Update</button>
+                                                    <button type="submit" class="btn btnOutlineRed">Complete</button>
+                                                    <button type="submit" class="btn btnOutlineRed">Cancel</button>
+                                                    <button type="submit" class="btn btnOutlineRed">Reprocess</button>
+                                                </div>
+                                                <div class="clear"></div>
+                                                <div class="legendRow">
+                                                    <span class="legendInfo legend"><span>Legends :</span></span>
+                                                    <span class="legendInfo"><i class="zmdi zmdi-check zmdi-hc-fw txtGreen"></i> <span>Certified</span></span>
+                                                    <span class="legendInfo"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i> <span>Not Certified</span></span>
+                                                </div>
+                                            </div>                                               
+
+                                        </div>
+                                        </div>
+                                    </div>
+                                    <div class="tableScrollWrapper mcustomScroll">                                        
+                                        <table class="table custGrid">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center tbl-row-first-td">Status</th>
+                                                    <th class="text-left">Data Field</th>
+                                                    <th class="text-left">Import Data</th> 
+                                                    <th class="text-left">OCR Data</th>       
+                                                    <th class="text-left">Certified Data</th> 
+                                                    <th class="text-center">
+                                                        <span class="customCheckRad">
+                                                            <label for="checkAll" class="checkbox">
+                                                                <input id="checkAll" type="checkbox">
+                                                                <span></span>
+                                                                Certify
+                                                            </label>
+                                                        </span>
+                                                        
+                                                    </th>
+                                                    <th class="text-center tbl-row-last-td">Comments</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                            
+                                                <tr class="rowGreen">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-check zmdi-hc-fw txtGreen"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check1" class="checkbox">
+                                                                <input id="check1" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr>
+
+                                                <tr class="rowRed">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check2" class="checkbox">
+                                                                <input id="check2" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr> 
+
+                                                <tr class="rowGreen">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-check zmdi-hc-fw txtGreen"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check3" class="checkbox">
+                                                                <input id="check3" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr>
+
+                                                <tr class="rowGreen">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-check zmdi-hc-fw txtGreen"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check4" class="checkbox">
+                                                                <input id="check4" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr>
+
+                                                <tr class="rowRed">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check5" class="checkbox">
+                                                                <input id="check5" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr> 
+
+                                                <tr class="rowRed">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check6" class="checkbox">
+                                                                <input id="check6" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr> 
+
+                                                <tr class="rowRed">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check7" class="checkbox">
+                                                                <input id="check7" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr> 
+
+                                                <tr class="rowRed">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check8" class="checkbox">
+                                                                <input id="check8" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr> 
+
+                                                <tr class="rowGreen">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-check zmdi-hc-fw txtGreen"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check9" class="checkbox">
+                                                                <input id="check9" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr>
+
+                                                <tr class="tbl-grid-last-row-bdr rowRed">
+                                                    <td class="text-center tbl-row-first-td"><i class="zmdi zmdi-close zmdi-hc-fw txtRed"></i></td>
+                                                    <td class="text-left">LTV</td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-left selectInside">
+                                                        <div class="input-field">
+                                                            <input type="text" name="" id="" value="90.00" class="form-control" />
+                                                        </div>
+                                                    </td>
+                                                    <td class="text-center selectInside">
+                                                        <span class="customCheckRad">
+                                                            <label for="check10" class="checkbox">
+                                                                <input id="check10" type="checkbox">
+                                                                <span></span>
+                                                            </label>
+                                                        </span>
+                                                    </td>
+                                                    <td class="text-center"><a href="#commentsModal"  data-toggle="modal"><i class="zmdi zmdi-comment-alt-text zmdi-hc-fw"></i></a></td>
+                                                </tr>                                            
+                                            </tbody>
+                                        </table>                                        
+                                    </div>                                    
+                                </div>                             
+                        </div>
+                        <!-- comnBox ends -->                    
+                    
+                    </div>
+                </div>
+                <!-- mid boxes row ends -->
+
+
+
+                
+
+            </div>
+            <!-- wrap ends -->
+            
+            
+
+        </div>
+    </div>
+    <!-- main container ends -->
+
+    <!-- Footer -->
+    <footer id="footer">
+    <div class="clear">&nbsp;</div>        
+        <div class="row footer-info-container">
+            <p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 copytxt">Copyright &copy; 2017 Indecomm Global Services. All rights reserved.</p>
+            <p class="col-lg-6 col-md-6 col-sm-12 col-xs-12 footerLogo">Powered by <a href="http://www.indecomm.net/" class="txtRed">Indecomm Global Services</a></p>
+        </div>
+    </footer>
+
+
+<!--Comments Modal -->
+<div id="commentsModal" class="modal fade customModal">    
+        <div class="modal-content">
+            <div class="modal-header">                
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><img src="images/modal-close.png" alt="" title="" /></button>
+                <h4 class="modal-title">LE &amp; CD Comparison</h4>
+                
+            </div>
+            <div class="modal-body mcustomScroll">
+                <div class="row modalQuestionWrapper">
+                    <div class="col-lg-12 col-md-12">
+                        <h6 class="modalQuestion">Are the Applicants the same on the LE and CD?</h6>
+
+                                    
+                                    <h6 class="commentsModalSubHead">Comments</h6>
+                                    <form class="form-horizontal form-elmnts customForm mrgBtm20 commentsModalForm">
+                                        <div class="form-group formGroupInput">
+                                            <div class="input-field">
+                                                <textarea name="" id="" class="materialize-textarea" placeholder="Leave your comments here"></textarea>
+                                            </div>
+                                        </div>
+                                            <div class="btn-wrap btn-group">
+                                                <button type="submit" name="" id="" class="btn btnRedFilled">Post Comment</button>
+                                                <button type="reset" name="" id="" class="btn btnGrayFilled">Clear</button>
+                                            </div>
+                                    </form>
+
+                                    <div class="clearfix clear clearSmHr"><hr></div>
+                                    
+                                    <h6 class="commentsModalSubHead2">Comments History</h6>   
+                                    <div class="row auditPostsWrapper">
+
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-12 col-md-12 auditPostsRow">
+                                            <div class="postedByRow">
+                                                <div class="postedBy">
+                                                    <span>Posted by <span class="postedByName">Admin</span></span>
+                                                </div>
+                                                <div class="postedByDtTime">
+                                                    <span><i class="zmdi zmdi-time zmdi-hc-fw"></i> Feb 15 2017, 8:43 AM</span>
+                                                </div>
+                                            </div>
+                                            <div class="postText">
+                                                <p>Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs. Loan moved from available for audit to waiting docs.</p>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>    
+</div>
+<!-- comments modal -->
+
+
+<!-- jQuery Version 1.10.1 --> 
+<script src="js/jquery-1.10.1.min.js"></script> 
+<!-- Bootstrap Core JavaScript --> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/materialize.js"></script>    
+<script src="js/classie.js"></script>
+
+<!-- scrollbar js -->
+<script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="js/jquery.mCustomScrollbar.js"></script>
+<!-- mobile detect -->
+<script src="js/mobile-detect.min.js"></script>
+
+<script src="js/common.js"></script>
+    
+</body>
+</html>
